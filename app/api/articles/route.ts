@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 import { put, list } from '@vercel/blob'
 
 export const dynamic = 'force-dynamic'
@@ -145,9 +145,19 @@ export async function PUT(req: Request) {
   }
 }
 
-export async function DELETE(req: Request) {
+export async function DELETE(req: NextRequest) {
   try {
-    const id = new URL(req.url).searchParams.get('id')
+    let id = req.nextUrl.searchParams.get('id')
+
+    if (!id) {
+      try {
+        const body = await req.json()
+        id = body.id
+      } catch {
+        // no body provided
+      }
+    }
+
     if (!id) return NextResponse.json({ error: 'ID required' }, { status: 400 })
 
     const store = await load()

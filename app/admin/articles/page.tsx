@@ -325,8 +325,10 @@ export default function AdminArticlesPage() {
     setDeleting(articleId)
     
     try {
-      const res = await fetch(`/api/articles?id=${articleId}`, {
-        method: 'DELETE'
+      const res = await fetch('/api/articles', {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: articleId })
       })
       
       if (!res.ok) {

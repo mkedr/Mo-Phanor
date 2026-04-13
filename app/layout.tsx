@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     description: 'Helping first-time homebuyers make confident, bias-free mortgage decisions using behavioral economics.',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og-image.png',
         width: 1200,
         height: 630,
         alt: 'Mo Phanor - Mortgage Decision Coach',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Mo Phanor - Mortgage Decision Coach',
     description: 'Helping first-time homebuyers make confident, bias-free mortgage decisions using behavioral economics.',
-    images: ['/og-image.jpg'],
+    images: ['/og-image.png'],
   },
   robots: {
     index: true,
@@ -62,15 +62,7 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
+        url: '/favicon.svg',
         type: 'image/svg+xml',
       },
     ],
